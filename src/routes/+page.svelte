@@ -2,7 +2,7 @@
     import * as Tone from "tone";
 	import PlayButton from "../components/PlayButton.svelte";
 
-    const synth = new Tone.Synth().toDestination();
+    const synth = new Tone.PolySynth().toDestination();
 
     synth.set({
         "envelope": {
