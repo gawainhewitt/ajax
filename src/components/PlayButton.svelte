@@ -7,9 +7,18 @@
 
     const dispatch = createEventDispatcher()
 
-    const handleButton = () => {
-        dispatch("clicked", note);
+    const handleButton = (e) => {
+        
         // alert("click");
+        if (e.type === "touchstart"){
+            const touch = e.targetTouches[0].identifier;
+            dispatch('touched', {note, touch})
+            // dispatch("touched", )
+            // alert(e.targetTouches[0].identifier);
+        } else {
+            dispatch("clicked", note);
+        }
+        console.log(e.type);
     }
 
 </script>
